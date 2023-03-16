@@ -1,0 +1,5 @@
+This is just a sample text file.
+
+Open it using vim, nano, neovim, emacs, etc.
+
+Edit it, delete lines, add lines, have fun!
