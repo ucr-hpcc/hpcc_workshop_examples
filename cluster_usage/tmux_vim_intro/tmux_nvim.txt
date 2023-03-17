@@ -100,9 +100,9 @@ dd # deletes line where cursor is or those that are selected via visual mode.
 ## Splitting Windows and Opening Multiple Files
 yy # copies line(s) where cursor is or selected via visual mode. Use p for paste. 
 
-################################################
-## Exercise: Workflow Route with Vim and Tmux ##
-################################################
+##################################################
+## Exercise: Workflow Routine with Vim and Tmux ##
+##################################################
 
 ## 1. SSH into HPCC cluster 
 ssh -XY <user>@cluster.hpcc.ucr.edu
