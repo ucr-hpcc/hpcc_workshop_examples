@@ -1,0 +1,127 @@
+############################
+## Intro to Tmux and Nvim ##
+############################
+## Date: Mar 17, 2023
+
+#################
+## Tmux Basics ##
+#################
+
+## Start Tmux
+tmux # starts a new tmux session
+tmux a # attaches to an existing session
+tmux attach -t <id> # attaches to a specific session 
+tmux ls # lists existing tmux sessions 
+
+## Prefix to Control Tmux (can be changed in ~/.tmux.conf) 
+Ctrl-b #  default is hard to type 
+Ctrl-a #  more commonly used, also on HPCC
+
+## Prefix can be changed by placing following lines into ~/.tmux.conf:
+unbind C-b
+set -g prefix C-a 
+
+## Mouse Support
+Ctrl-a : set -g mouse on # To make it default, include in your ~/.tmux.conf: set -g mouse on
+
+## Important keybindings for tmux
+
+## 1. Pane-level commands
+Ctrl-a %: splits pane vertically
+Ctrl-a “: splits pane horizontally
+Ctrl-a o  or  Ctrl-a <arrow keys>: jumps cursor to next pane
+Ctrl-a Ctrl-o: swaps panes
+Ctrl-a <space bar>: rotates pane arrangement
+Ctrl-a Alt <left or right>: resizes to left or right
+Ctrl-a Esc <up or down>: resizes to left or right
+
+## 2. Window-level commands
+Ctrl-a n`: switches to next tmux window
+Ctrl-a Ctrl-a: switches to previous tmux window
+Ctrl-a c: creates a new tmux window
+Ctrl-a 1: switches to specific tmux window selected by number
+
+## 3. Session-level commands
+Ctrl-a d: detaches from current session
+Ctrl-a s: switch between available tmux sessions
+$ tmux new -s <name>: starts new session with a specific name
+$ tmux ls: lists available tmux session(s)
+$ tmux attach -t <id>: attaches to specific tmux session
+$ tmux attach: reattaches to session
+$ tmux kill-session -t <id>: kills a specific tmux session
+Ctrl-a : kill-session: kills a session from tmux command mode that can be initiated with Ctrl-a :
+
+################
+## Vim Basics ##
+################
+
+## Open file
+nvim myfile.txt # for neovim (or 'vim myfile.txt' for vim)
+
+## Modes
+i # The i key switches from the normal mode to the insert mode which is used for typing.
+Esc # The Esc key brings you from the insert mode back to the normal mode.
+: # The : key starts the command mode at the bottom of the screen.
+
+## Moving Around
+Arrow # Moves cursor in the text. 
+Fn Up/Down # faster scrolling via paging.
+G or gg #jump to end of document an back to beginning. 
+w or b # move forward and backward by word
+) or ( # move forward and backward by sentence 
+
+## Note: In the following instructions, commands starting with ‘:’ need to be
+## typed in the command mode. All other commands are typed in the normal mode
+## cafter pressing the Esc key. :w     Save changes to file. If you are in editing
+## mode you have to hit Esc first.
+:q #    Quit file that has not been changed.
+:wq #  Save and quit file. 
+:q! # Quit file without saving any changes.
+
+## Mouse Support (newer Vim versions)
+:set mouse=n  # Enables mouse support, also try 'a' option
+:set mouse-=n # Disables mouse support
+
+## To enable mouse support by default, add set mouse=n to Nvim’s config file located in a user’s home under ~/.config/nvim/init.vim
+
+## Magic of Command Mode
+## Examples: search and replace with regular expression support
+/ or ? #  search forward and backward
+:%s/search_pattern/replace_pattern/cg : replacement syntax 
+
+## Visual Mode
+## Initialized from normal mode with v, V or Ctrl + v 
+## Delete and copy selected text with d and y, respectively. For paste use p from normal mode. The copied (yanked) text is stored in a separate vim clipboard. 
+
+## Copy and Delete Lines
+yy # copies line where cursor is or those that are selected via visual mode. Paste works with p as above.
+dd # deletes line where cursor is or those that are selected via visual mode.
+
+## Splitting Windows and Opening Multiple Files
+yy # copies line(s) where cursor is or selected via visual mode. Use p for paste. 
+
+##################################################
+## Exercise: Workflow Routine with Vim and Tmux ##
+##################################################
+
+## 1. SSH into HPCC cluster 
+ssh -XY <user>@cluster.hpcc.ucr.edu
+
+## 2. Create new tmux session or re-attach
+tmux a
+
+## 3. Split tmux window, log into a compute node, and practise tmux functionalities
+Ctrl-a “ or Ctrl-a % 
+srun …  or sbatch …  # both explained in next section
+
+## 4. Open file in vim, make some changes, save/quit, and reopen same file  
+nvim myfile.txt
+
+## 4. Detach from tmux session and log out of cluster
+Ctrl-a d
+
+## 5. Log back in to cluster, resume tmux session (requires same headnode!)
+tmux a # Now you are back where you left off. This way you can re-attach to 
+       # same terminal session from different computers!
+
+
