@@ -12,7 +12,7 @@
   git init
   ```
 
-+ Add specific files to Git repository (staging area)
++ Add specific files to Git repository (staging area) 
   ```
   git add myfile
   ```
