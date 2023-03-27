@@ -1,5 +1,7 @@
 # Git and GitHub Exercises
 
+# Hello, I made a change...
+
 ## 1. Git Basics from Command-Line
 
 + Finding help from command-line
