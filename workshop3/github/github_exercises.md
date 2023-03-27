@@ -5,6 +5,7 @@
 + Finding help from command-line
   ```
   git <command> --help
+  some addditional thing
   ```
 
 + Initialize a directory as a Git repository
