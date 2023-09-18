@@ -3,12 +3,12 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=10G
-#SBATCH --time=1-00:15:00
+#SBATCH --mem=1G
+#SBATCH --time=00:05:00
 #SBATCH --mail-user=useremail@address.com
 #SBATCH --mail-type=ALL
 #SBATCH --job-name="Python Example"
-#SBATCH -p intel
+#SBATCH -p short
 
 # Remove all modules and load miniconda3 (has python3)
 module purge
