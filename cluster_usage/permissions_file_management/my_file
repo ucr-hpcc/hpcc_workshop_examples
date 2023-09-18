@@ -1,6 +1,0 @@
-Play around with changing the permissions of this file!
-
-chmod ugo+r my_file # Add Read permissions from User, Group, and Other
-chmod go-r my_file # Remove read permissions from Group and Other
-chmod 777 my_file # Add ALL permissions to file!
-chmod 700 my_file # Add RWX permissions to User, NO permissions to Group and Other
