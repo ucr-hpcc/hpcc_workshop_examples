@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=1G
 #SBATCH --time=00:05:00
-#SBATCH --mail-user=useremail@address.com
-#SBATCH --mail-type=ALL
+##SBATCH --mail-user=useremail@address.com
+##SBATCH --mail-type=ALL
 #SBATCH --job-name="Python Array Example"
 #SBATCH -p short
 
@@ -15,15 +15,17 @@ module load miniconda3
 
 echo "Job ID: $SLURM_JOB_ID"
 echo "Nodelist: $SLURM_JOB_NODELIST"
+echo
 
 # Use Python3 to run Python script
-for ((i=1 ; i<$1; i++)); do
+for ((i=1 ; i<=$1; i++)); do
 
   equation=$(sed -n "${i}p" equations.txt)
   value=$(sed -n "${i}p" values.txt)
 
   echo "Evaluating equation $i"
-  echo "$equation at x = $value : "
+  echo "( $equation ) at (x = $value) : "
   python3 myPyscript.py $equation $value
+  echo
 
 done
