@@ -17,7 +17,7 @@
 set -e
 
 # Tab-separated file to read
-INPUT_FILE="TOP500_202211_trimmed.csv"
+INPUT_FILE="TOP500_202211_trimmed.tsv"
 
 # Output prefix for output files
 # Consider starting the prefix with a different letter than the input, so you
@@ -81,7 +81,7 @@ get_top_info() {
 for C in "${COUNTRIES[@]}"; do
     # Create a name for the output file. Replace spaces with underscore.
     C1=$(echo "$C" | tr ' ' '_')
-    OUTPUT_FILE="$OUTPUT_PREFIX$C1.csv"
+    OUTPUT_FILE="$OUTPUT_PREFIX$C1.tsv"
 
     # Remove any existing file and initialize a new file with a header.
     rm -f "$OUTPUT_FILE"

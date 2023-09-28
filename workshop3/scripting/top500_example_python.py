@@ -11,7 +11,7 @@
 import csv
 
 # By convention, variables with all-capital names should be treated as constant.
-INPUT_FILE = "TOP500_202211_trimmed.csv"
+INPUT_FILE = "TOP500_202211_trimmed.tsv"
 
 # We provide these two constants for better readability. Otherwise anyone
 # reading this code would have to remember the order of items in the tuple.
