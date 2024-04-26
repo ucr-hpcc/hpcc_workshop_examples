@@ -11,7 +11,7 @@
 import csv
 
 # By convention, variables with all-capital names should be treated as constant.
-INPUT_FILE = "TOP500_202211_trimmed.tsv"
+INPUT_FILE = "TOP500_2023nov_trimmed.tsv"
 
 # We provide these two constants for better readability. Otherwise anyone
 # reading this code would have to remember the order of items in the tuple.
@@ -118,6 +118,10 @@ country_tuples_combined = combine_country_lines(country_tuples)
 # "\t" is the escape sequence for TAB.
 # The first f-string may be more readable with spaces added:
 # f"{ c[COUNT_IDX] }   \t   { c[COUNTRY_IDX] }"
+
+print(f"Input file used: {INPUT_FILE}")
+print("")
+
 print("Number of TOP500 clusters by country:")
 for c in country_tuples_combined:
     print(f"{c[COUNT_IDX]}\t{c[COUNTRY_IDX]}")

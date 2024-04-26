@@ -1,0 +1,26 @@
+{
+  "Alice" : { "role"  : "White Mage",
+              "hp"    : 100,
+              "mp"    : 200,
+              "atk"   : 5,
+              "def"   : 10,
+              "mag"   : 30,
+              "speed" : 12
+            },
+  "Bob" : { "role"  : "Black Mage",
+            "hp"    : 100,
+            "mp"    : 200,
+            "atk"   : 7,
+            "def"   : 10,
+            "mag"   : 27,
+            "speed" : 12
+          },
+  "Carol" : { "role"  : "Thief",
+              "hp"    : 70,
+              "mp"    : 100,
+              "atk"   : 13,
+              "def"   : 12,
+              "mag"   : 10,
+              "speed" : 25
+          }
+}
