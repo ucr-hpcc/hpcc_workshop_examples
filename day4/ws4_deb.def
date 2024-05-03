@@ -1,0 +1,15 @@
+BootStrap: docker
+From: debian:12
+
+%post
+  apt-get update -y
+  apt-get install -y neofetch
+
+%environment
+  export LC_ALL=C
+
+%runscript
+  neofetch
+
+%labels
+  UCR HPCC Workshop Singularity/Apptainer Example
